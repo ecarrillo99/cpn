@@ -1,22 +1,17 @@
 import React from 'react';
-import NavBar from './components/navbar'
-import Banner from "./components/banner";
-import Beneficios from './components/beneficios';
-import Pasarela from './components/pasarela';
-import Footer from './components/footer';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Home from './pages/home';
+import Contactanos from './pages/contactanos';
 
 const App=()=> {
-  
 
   return (
-    <>    
-      
-      <NavBar menu={"inicio"}></NavBar>
-      <Banner ></Banner>
-      <Beneficios ></Beneficios>
-      <Footer></Footer>
-      
-    </>
+    <Router >
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/contactanos" element={<Contactanos />} />
+      </Routes>
+    </Router>
   )
 }
 
