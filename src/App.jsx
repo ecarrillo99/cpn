@@ -2,6 +2,8 @@ import React from 'react';
 import NavBar from './components/navbar'
 import Banner from "./components/banner";
 import Beneficios from './components/beneficios';
+import Pasarela from './components/pasarela';
+import Footer from './components/footer';
 
 const App=()=> {
   
@@ -9,11 +11,16 @@ const App=()=> {
   return (
     <>    
       
-      <NavBar></NavBar>
-      <div className='z-0'><Banner ></Banner></div>
-      <div className='z-50'> <Beneficios ></Beneficios></div>
+      <NavBar menu={"inicio"}></NavBar>
+      <Banner ></Banner>
+      <Beneficios ></Beneficios>
+      <Footer></Footer>
+      
     </>
   )
 }
 
 export default App
+
+
+//<Pasarela></Pasarela>
