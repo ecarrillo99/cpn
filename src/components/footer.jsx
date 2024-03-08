@@ -1,6 +1,6 @@
 import React from 'react';
 
-const footer = () => {
+const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <div className="bg-blackCPN-900 h-[158px]">
@@ -19,4 +19,4 @@ const footer = () => {
     );
 };
 
-export default footer;
+export default Footer;

@@ -10,7 +10,7 @@ const Home = () => {
         <div>
              <NavBar menu={"inicio"}></NavBar>
             <Banner ></Banner>
-            <Beneficios ></Beneficios>
+            <Beneficios suscribirse={true}></Beneficios>
             <Footer></Footer>
         </div>
     );

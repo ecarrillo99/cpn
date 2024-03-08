@@ -1,9 +1,13 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Beneficios = () => {
+const Beneficios = ({suscribirse}) => {
     const [expanded, setExpanded] = useState([false, false, false, false, false, false]);
-
+    const navigation = useNavigate();
+    const handleClickSuscribirse = () => {
+        navigation("/suscribirse")
+    };
     const toggleExpand = (index) => {
         setExpanded(prevExpanded => {
           const newExpanded = [...prevExpanded]; // Hacer una copia del array original
@@ -86,6 +90,19 @@ const Beneficios = () => {
                             </div>                        
                         </div>
                         <div className="flex items-start w-1/2 p-4">
+                            <img className="h-20" src="./img/infotour.svg"  />
+                            <div className='flex flex-col'>
+                                <h2 className="text-xl font-bold mb-2">InfoTour</h2>
+                                <div className={`overflow-hidden text-sm ${expanded[5] ? 'block' : 'h-10'}`}>                                   
+                                    <p><label className='text-orangeCPN-700 font-bold'>✔</label> Guía turística para actividades dentro del país.</p>
+                                    <p><label className='text-orangeCPN-700 font-bold'>✔</label> Comunicación vía WhatsApp con los municipios y operación turística de cada ciudad para recomendaciones de actividades en el destino seleccionado..</p>                                    
+                                </div>
+                                <button className="flex text-orangeCPN-700 items-start" onClick={()=>toggleExpand(5)}>
+                                    {expanded[5] ? 'Ver menos..▲' : 'Ver más..▼'}
+                                </button>
+                            </div>                              
+                        </div>    
+                        <div className="flex items-start w-1/2 p-4">
                             <img className="h-20" src="./img/viajes.svg"  />
                             <div className='flex flex-col'>
                                 <h2 className="text-xl font-bold mb-2">Asistencia viajes nacionales:</h2>
@@ -108,23 +125,16 @@ const Beneficios = () => {
                                 </button>
                             </div>                              
                         </div>
-                        <div className="flex items-start w-1/2 p-4">
-                            <img className="h-20" src="./img/infotour.svg"  />
-                            <div className='flex flex-col'>
-                                <h2 className="text-xl font-bold mb-2">InfoTour</h2>
-                                <div className={`overflow-hidden text-sm ${expanded[5] ? 'block' : 'h-10'}`}>                                   
-                                    <p><label className='text-orangeCPN-700 font-bold'>✔</label> Guía turística para actividades dentro del país.</p>
-                                    <p><label className='text-orangeCPN-700 font-bold'>✔</label> Comunicación vía WhatsApp con los municipios y operación turística de cada ciudad para recomendaciones de actividades en el destino seleccionado..</p>                                    
-                                </div>
-                                <button className="flex text-orangeCPN-700 items-start" onClick={()=>toggleExpand(5)}>
-                                    {expanded[5] ? 'Ver menos..▲' : 'Ver más..▼'}
-                                </button>
-                            </div>                              
-                        </div>                        
+                                            
                     </div>
-                    <div className='flex justify-center mt-6'>
-                        <a className='text-2xl mb-16 border-2 text-white border-orangeCPN-600 bg-orangeCPN-600 hover:bg-blackCPN-900 hover:border-white w-72 flex items-center justify-center rounded-full py-3 cursor-pointer'>SUSCRÍBETE AHORA</a>
-                    </div>
+                    {
+                        suscribirse
+                        ?<div className='flex justify-center mt-6'>
+                            <a className='text-2xl mb-16 border-2 text-white border-orangeCPN-600 bg-orangeCPN-600 hover:bg-blackCPN-900 hover:border-white w-72 flex items-center justify-center rounded-full py-3 cursor-pointer' onClick={handleClickSuscribirse}>SUSCRÍBETE AHORA</a>
+                        </div>
+                        :<div className='h-20'></div>
+                    }
+                    
                 </div>                
             </div>
         </>
