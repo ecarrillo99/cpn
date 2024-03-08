@@ -10,7 +10,6 @@ export const sendContactanos = async function ( nombres, email, mensaje){
         }
         const res = await contactoService.formularioContactanos(params);
         if (res.estado) {
-            
             return true;
         }
         return false;

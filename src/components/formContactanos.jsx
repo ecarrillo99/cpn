@@ -94,7 +94,7 @@ const FormContactanos = () => {
                 </div>
 
             </div>
-            <div className='mt-16 h-28 bg-orange-600 flex justify-center items-center text-white gap-x-9'>
+            <div className='mt-16 h-28 bg-orangeCPN-600 flex justify-center items-center text-white gap-x-9'>
                 <div>
                     <h1 className='font-bold text-3xl'>¿Tienes alguna duda?</h1>
                 </div>
